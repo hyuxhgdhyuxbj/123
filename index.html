@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="24小时在线商品目录">
+  <title>商品目录</title>
+  <link rel="stylesheet" href="/white-label.css">
+  <link rel="stylesheet" href="/description.css">
+</head>
+<body>
+  <header class="navbar">
+    <div class="container nav-inner">
+      <a class="brand" href="#top" aria-label="商品目录首页"><span class="brand-mark" aria-hidden="true">◆</span><span>商品目录</span></a>
+      <nav class="nav-links" aria-label="主要导航"><a class="nav-link active" href="#top">商品</a><a class="nav-link" href="#catalog">分类</a></nav>
+      <button class="menu-toggle" type="button" aria-label="展开菜单" aria-expanded="false">☰</button>
+    </div>
+  </header>
+
+  <main id="top" class="container page-content">
+    <section class="hero panel">
+      <div class="hero-copy"><p class="eyebrow">ONLINE CATALOG</p><h1>精选商品目录</h1><p>浏览分类、搜索商品并查看实时库存。</p></div>
+      <div class="search-box"><span aria-hidden="true">⌕</span><input id="search-input" type="search" placeholder="输入商品名称搜索..." autocomplete="off"><button type="button" data-action="search">搜索</button></div>
+    </section>
+
+    <section class="panel shop-panel" id="catalog">
+      <div class="panel-header shop-header"><span class="panel-icon" aria-hidden="true">▦</span><h2>商品分类</h2></div>
+      <div class="panel-body"><div class="category-list" id="category-list"><div class="loading">分类加载中...</div></div><div class="catalog-divider"></div><div class="section-label">商品列表</div><div class="product-grid" id="product-grid"><div class="loading">努力加载中..</div></div></div>
+    </section>
+  </main>
+
+  <div class="toast" id="toast" role="status"></div>
+  <div class="modal-backdrop" id="product-modal" aria-hidden="true">
+    <section class="product-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <button class="modal-close" type="button" data-action="close-modal" aria-label="关闭">×</button>
+      <div class="modal-product-top"><div class="modal-cover" id="modal-cover" aria-hidden="true"></div><div><h2 id="modal-title">商品详情</h2><p class="modal-price" id="modal-price">¥0</p><div id="modal-tags" class="modal-tags"></div></div></div>
+      <section class="modal-description" aria-labelledby="description-title"><h3 id="description-title">商品介绍</h3><div id="modal-description-content" class="description-content">详情加载中...</div></section>
+      <div class="modal-form"><label>联系方式<input id="contact" type="text" placeholder="请输入联系方式"></label><label>购买数量<div class="quantity"><button type="button" data-action="minus">−</button><input id="quantity" type="number" min="1" value="1"><button type="button" data-action="plus">＋</button></div></label><div class="modal-total">合计 <b id="modal-total">¥0</b></div><button class="buy-button" type="button" data-action="buy">确认</button></div>
+      <p class="modal-note">当前为商品目录展示页。</p>
+    </section>
+  </div>
+  <script src="/catalog-data.js"></script>
+  <script src="/white-label.js"></script>
+</body>
+</html>
