@@ -1,0 +1,20 @@
+.payment-backdrop{position:fixed;inset:0;z-index:120;display:none;align-items:center;justify-content:center;padding:18px;background:rgba(15,23,42,.46);backdrop-filter:blur(4px)}
+.payment-backdrop[aria-hidden="false"]{display:flex}
+.payment-modal{position:relative;width:min(430px,100%);max-height:calc(100vh - 36px);overflow:auto;padding:26px 22px 22px;border-radius:18px;background:#fff;box-shadow:0 24px 80px rgba(0,0,0,.26);text-align:center}
+.payment-close{position:absolute;top:8px;right:11px;border:0;background:transparent;color:#6b7280;font-size:28px;line-height:1;cursor:pointer}
+.payment-modal h2{margin:0 0 8px;color:var(--ink);font-size:22px}
+.payment-order{margin:0 0 18px;color:var(--muted);font-size:13px}
+.payment-methods{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.payment-method{display:flex;align-items:center;justify-content:center;gap:8px;padding:13px 10px;border:1px solid #cfe1d7;border-radius:10px;background:#fff;color:var(--green-dark);font:inherit;font-weight:800;cursor:pointer;transition:.2s}
+.payment-method:hover{border-color:var(--green);background:#f3fcf7;transform:translateY(-1px)}
+.payment-method-icon{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:8px;color:#fff;font-size:14px;font-weight:900}
+.payment-method-icon.wechat{background:#1aad19}.payment-method-icon.alipay{background:#1677ff}
+.payment-qr-panel{display:grid;justify-items:center;gap:10px}
+.payment-qr-panel[hidden]{display:none}
+.payment-qr-title{margin:0;color:var(--green-dark);font-size:15px;font-weight:800}
+.payment-qr-image{display:block;width:min(320px,80vw);height:auto;max-height:58vh;object-fit:contain;border-radius:10px;border:1px solid #e2e8f0;background:#fff}
+.payment-confirm{width:100%;border:0;border-radius:9px;padding:12px;background:linear-gradient(135deg,#17b981,#087a5b);color:#fff;font:inherit;font-weight:800;cursor:pointer}
+.payment-switch{border:0;background:transparent;color:var(--green-dark);font:inherit;font-size:13px;cursor:pointer}
+.qq-icon{width:56px;height:56px;margin:0 auto 12px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#3b82f6,#2563eb);color:#fff;font-size:14px;font-weight:900}
+.qq-message{margin:12px 0 20px;color:#4b5e55;font-size:16px;line-height:1.7}.qq-message strong{color:#2563eb;letter-spacing:.5px}
+@media(max-width:576px){.payment-modal{padding:24px 16px 18px}.payment-qr-image{width:min(300px,84vw)}}

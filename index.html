@@ -7,6 +7,7 @@
   <title>商品目录</title>
   <link rel="stylesheet" href="./white-label.css">
   <link rel="stylesheet" href="./description.css">
+  <link rel="stylesheet" href="./payment.css">
 </head>
 <body>
   <div class="notice-marquee" role="status" aria-label="购买提示">
@@ -53,7 +54,34 @@
       <p class="modal-note">当前为商品目录展示页。</p>
     </section>
   </div>
+  <div class="payment-backdrop" id="payment-modal" aria-hidden="true">
+    <section class="payment-modal" role="dialog" aria-modal="true" aria-labelledby="payment-modal-title">
+      <button class="payment-close" type="button" data-action="close-payment" aria-label="关闭支付方式">×</button>
+      <h2 id="payment-modal-title">选择支付方式</h2>
+      <p class="payment-order" id="payment-order-summary">请完成支付后点击确认</p>
+      <div class="payment-methods" id="payment-methods">
+        <button type="button" class="payment-method" data-payment-method="wechat"><span class="payment-method-icon wechat">微</span><span>微信支付</span></button>
+        <button type="button" class="payment-method" data-payment-method="alipay"><span class="payment-method-icon alipay">支</span><span>支付宝</span></button>
+      </div>
+      <div class="payment-qr-panel" id="payment-qr-panel" hidden>
+        <p class="payment-qr-title" id="payment-qr-title">请扫码支付</p>
+        <img id="payment-qr-image" class="payment-qr-image" src="" alt="收款二维码">
+        <button type="button" class="payment-confirm" data-action="payment-complete">支付完成，确认</button>
+        <button type="button" class="payment-switch" data-action="switch-payment">更换支付方式</button>
+      </div>
+    </section>
+  </div>
+  <div class="payment-backdrop" id="qq-modal" aria-hidden="true">
+    <section class="payment-modal qq-modal" role="dialog" aria-modal="true" aria-labelledby="qq-modal-title">
+      <button class="payment-close" type="button" data-action="close-qq" aria-label="关闭领取提示">×</button>
+      <div class="qq-icon" aria-hidden="true">QQ</div>
+      <h2 id="qq-modal-title">支付确认</h2>
+      <p class="qq-message">请添加 QQ <strong>578828025</strong> 领取卡密</p>
+      <button type="button" class="payment-confirm" data-action="close-qq">我已了解</button>
+    </section>
+  </div>
   <script src="./catalog-data.js?v=4e51485a73a417f80faea68dd06bed99828403df"></script>
   <script src="./white-label.js"></script>
 </body>
 </html>
+
